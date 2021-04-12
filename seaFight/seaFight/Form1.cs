@@ -26,6 +26,8 @@ namespace seaFight
 
         public Map playerMap;
 
+        public Map mobMap;
+
         public Form1()
         {
             InitializeComponent();
@@ -54,6 +56,34 @@ namespace seaFight
             for (int i = 0; i < 10; i++)
             {
                 graphics.DrawString(numbers[i], myFont, Brushes.Black, new Point(40 * (i + 2) - 30, 10));
+            }
+
+            mobMap = new Map();
+
+            pictureBox2.Image = new Bitmap(440, 440);
+
+            graphics2 = Graphics.FromImage(pictureBox2.Image);
+
+            graphics2.Clear(Color.White);
+
+            for (int i = 0; i < 12; i++)
+            {
+                graphics2.DrawLine(mypen, 0, 40 * (i + 1), pictureBox2.Width, 40 * (i + 1));
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                graphics2.DrawString(letters[i], myFont, Brushes.Black, new Point(10, 40 * (i + 2) - 30));
+            }
+
+            for (int i = 0; i < 12; i++)
+            {
+                graphics2.DrawLine(mypen, 40 * (i + 1), 0, 40 * (i + 1), pictureBox2.Width);
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                graphics2.DrawString(numbers[i], myFont, Brushes.Black, new Point(40 * (i + 2) - 30, 10));
             }
         }
 
