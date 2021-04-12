@@ -1,0 +1,10 @@
+D:\seaFight\seaFight\seaFight\bin\Debug\seaFight.exe.config
+D:\seaFight\seaFight\seaFight\bin\Debug\seaFight.exe
+D:\seaFight\seaFight\seaFight\bin\Debug\seaFight.pdb
+D:\seaFight\seaFight\seaFight\obj\Debug\seaFight.csprojAssemblyReference.cache
+D:\seaFight\seaFight\seaFight\obj\Debug\seaFight.Form1.resources
+D:\seaFight\seaFight\seaFight\obj\Debug\seaFight.Properties.Resources.resources
+D:\seaFight\seaFight\seaFight\obj\Debug\seaFight.csproj.GenerateResource.cache
+D:\seaFight\seaFight\seaFight\obj\Debug\seaFight.csproj.CoreCompileInputs.cache
+D:\seaFight\seaFight\seaFight\obj\Debug\seaFight.exe
+D:\seaFight\seaFight\seaFight\obj\Debug\seaFight.pdb
