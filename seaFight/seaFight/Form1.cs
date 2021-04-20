@@ -24,14 +24,18 @@ namespace seaFight
 
         public String[] numbers = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
-        public Map playerMap;
+        public Player player;
 
-        public Map mobMap;
+        public Player bot;
 
         public Form1()
         {
             InitializeComponent();
-            playerMap = new Map();
+            player = new Player();
+            bot = new Player();
+            player.map = new Map();
+            bot.map = new Map();
+
             pictureBox1.Image = new Bitmap(440, 440);
 
             graphics = Graphics.FromImage(pictureBox1.Image);
@@ -57,8 +61,6 @@ namespace seaFight
             {
                 graphics.DrawString(numbers[i], myFont, Brushes.Black, new Point(40 * (i + 2) - 30, 10));
             }
-
-            mobMap = new Map();
 
             pictureBox2.Image = new Bitmap(440, 440);
 
@@ -91,5 +93,6 @@ namespace seaFight
         {
 
         }
+
     }
 }

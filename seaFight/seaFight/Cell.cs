@@ -7,13 +7,14 @@ namespace seaFight
     {
         public int x;
         public int y;
-        public GameObject ship;
+        public bool blocked;
+        public Deck deck;
 
         public Cell(int X, int Y)
         {
             x = X;
             y = Y;
-            ship = null;
+            blocked = false;
         }
     }
 }

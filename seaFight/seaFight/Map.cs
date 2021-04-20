@@ -5,11 +5,9 @@ namespace seaFight
 {
     public class Map
     {
-        public List<GameObject> GameObjects = new List<GameObject>();
         public Cell[,] point;
         public int Width = 440;
         public int Height = 440;
-        static Random rnd = new Random();
 
         public Map()
         {
