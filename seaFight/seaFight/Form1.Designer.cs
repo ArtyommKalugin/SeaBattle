@@ -51,6 +51,7 @@ namespace seaFight
             this.pictureBox2.Size = new System.Drawing.Size(440, 440);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // startBtn
             // 
@@ -60,6 +61,7 @@ namespace seaFight
             this.startBtn.TabIndex = 2;
             this.startBtn.Text = "Start";
             this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // Form1
             // 

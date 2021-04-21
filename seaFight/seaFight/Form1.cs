@@ -112,27 +112,27 @@ namespace seaFight
                 {
                     if (player.Ships.Count == 0)
                     {
-                        SpawnShip(X, Y, 4);
+                        SpawnShip(X, Y, 4, player);
                     }
                     else if (player.Ships.Count >= 1 && player.Ships.Count <= 2)
                     {
-                        SpawnShip(X, Y, 3);
+                        SpawnShip(X, Y, 3, player);
                     }
                     else if (player.Ships.Count >= 3 && player.Ships.Count <= 5)
                     {
-                        SpawnShip(X, Y, 2);
+                        SpawnShip(X, Y, 2, player);
                     }
                     else if (player.Ships.Count <= 9)
                     {
-                        SpawnShip(X, Y, 1);
+                        SpawnShip(X, Y, 1, player);
                     }
                 }
             }
         }
 
-        private void SpawnShip(int X, int Y, int length)
+        private void SpawnShip(int X, int Y, int length, Player player)
         {
-            Ship ship = new Ship();
+            Ship ship = new Ship(player);
             player.Ships.Add(ship);
 
             if (CheckRight(X, Y, length))
@@ -265,6 +265,46 @@ namespace seaFight
                 {
                     player.map.point[x, y].blocked = false;
                 }
+        }
+
+        private void startBtn_Click(object sender, EventArgs e)
+        {
+            gameStarted = true;
+
+            for (int x = 1; x <= 10; x++)
+                for (int y = 1; y <= 10; y++)
+                {
+                    player.map.point[x, y].blocked = false;
+                    bot.map.point[x, y].blocked = false;
+                }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e) // Player Shots
+        {
+            if (gameStarted)
+            {
+                Point Cordinate = ((MouseEventArgs)e).Location;
+                int X = Cordinate.X / 40;
+                int Y = Cordinate.Y / 40;
+
+                if (X >= 1 && Y >= 1 && !bot.map.point[X, Y].blocked)
+                    PlayerShoots(X, Y);
+            }
+        }
+
+        private void PlayerShoots(int X, int Y)
+        {
+            if (bot.map.point[X, Y].deck != null)
+            {
+                bot.map.point[X, Y].deck.Die();
+                bot.map.point[X, Y].deck = null;
+                graphics2.FillRectangle(Brushes.Red, bot.map.point[X, Y].x + 1, player.map.point[X, Y].y + 1, 39, 39);
+            }
+            else
+            {
+                bot.map.point[X, Y].blocked = true;
+                graphics2.FillRectangle(Brushes.Blue, bot.map.point[X, Y].x + 1, player.map.point[X, Y].y + 1, 39, 39);
+            }
         }
     }
 }
